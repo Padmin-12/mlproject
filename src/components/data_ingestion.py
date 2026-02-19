@@ -10,8 +10,8 @@ from dataclasses import dataclass
 @dataclass
 class DataIngestionConfig:
      train_data=os.path.join('artifacts','train.csv')
-     test_data=os.path.join('artifacts','train.csv')
-     raw_data=os.path.join('artifacts','train.csv')
+     test_data=os.path.join('artifacts','test.csv')
+     raw_data=os.path.join('artifacts','data.csv')
 
 class DataIngestion:
      def __init__(self) :
