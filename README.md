@@ -1,63 +1,77 @@
-Student Performance Indicator — ML Pipeline
-📌 Overview
+# 🎓 Student Performance Indicator — ML Pipeline
 
-This project builds an end-to-end machine learning pipeline to analyze factors affecting student academic performance and predict test scores.
+## 📌 Overview
+This project builds an **end-to-end machine learning pipeline** to analyze factors affecting student academic performance and predict test scores.
 
-🎯 Problem Statement
+Unlike simple notebooks, this project follows a **production-style ML workflow** including data ingestion, preprocessing, feature engineering, model training, and evaluation.
 
-To understand how student performance is influenced by:
+---
 
-Gender
+## 🎯 Problem Statement
+Student performance is influenced by multiple socioeconomic and preparation-related factors.
 
-Ethnicity
+This project analyzes how performance is affected by:
 
-Parental education level
+- Gender  
+- Ethnicity  
+- Parental education level  
+- Lunch type  
+- Test preparation course  
 
-Lunch type
+**Goal:** Predict student test scores and identify key performance drivers.
 
-Test preparation course
+---
 
-The goal is to predict student test scores and identify key factors affecting performance.
+## 🚀 Key Features
 
-⚙️ ML Lifecycle Implemented
+✔ End-to-end ML pipeline implementation  
+✔ Automated data preprocessing & transformation  
+✔ Exploratory data analysis & insights  
+✔ Feature engineering for improved prediction  
+✔ Model training & evaluation  
+✔ Model comparison & selection *(ongoing)*  
 
-✔ Problem understanding
-✔ Data ingestion & validation
-✔ Data cleaning & preprocessing
-✔ Explorator y data analysis
-✔ Feature engineering
-✔ Model training & evaluation
-✔ Model selection (in progress)
+---
 
-📊 Features Used
+## 🧠 ML Workflow
 
-Gender
+1. Problem Understanding  
+2. Data Ingestion & Validation  
+3. Data Cleaning & Preprocessing  
+4. Exploratory Data Analysis  
+5. Feature Engineering  
+6. Model Training & Evaluation  
+7. Model Selection & Optimization *(in progress)*
 
-Race/Ethnicity
+---
 
-Parental education
+## 🛠 Tech Stack
 
-Lunch type
+**Language:** Python  
+**Libraries:** Pandas, NumPy, Scikit-learn  
+**Visualization:** Matplotlib, Seaborn  
 
-Test preparation course
+---
+## ▶️ How to Run
 
-Reading & writing scores (if used as predictors)
+### 1️⃣ Install Dependencies
 
-🛠 Tech Stack
+```bash
+pip install -r requirements.txt
 
-Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+```
+### 2️⃣ Run the Pipeline
 
-✅ Current Progress
+```bash
+python src/pipeline.py
 
-✔ Data preprocessing completed
-✔ EDA performed
-✔ Feature engineering completed
-✔ Multiple regression models trained
+```
 
-🔜 Next Steps
+📎 Dataset
 
-Hyperparameter tuning
+This project uses a student performance dataset containing demographic and academic attributes to analyze performance trends.
 
-Model optimization
+🤝 Contribution
 
-Performance improvement
+Contributions, suggestions, and improvements are welcome.
+
