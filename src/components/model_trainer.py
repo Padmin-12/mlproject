@@ -14,6 +14,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
+
 from src.logger import logging
 from src.exception import CustomException
 
@@ -44,14 +45,27 @@ class ModelTrainer():
             models={"Linear Regression":LinearRegression(),
                    "Decision Tree":DecisionTreeRegressor(),
                    "Gradient Boosting": GradientBoostingRegressor(),
-                   "Linear Regression": LinearRegression(),
+                   "Random Forest": RandomForestRegressor(),
                    "XGBRegressor": XGBRegressor(),
                    "CatBoosting Regressor": CatBoostRegressor(verbose=False),
                    "AdaBoost Regressor": AdaBoostRegressor(),}
             
+            params={"Linear Regression":{},
+                    "Decision Tree":{"max_depth":[3,5,10],"min_samples_split":[10,20,30]},
+                    "Gradient Boosting":{'learning_rate': [0.1, 0.01],
+                                        'n_estimators': [50, 100]},
+                    "Random Forest":{'n_estimators': [10, 50]},
+                    "XGBRegressor":{'learning_rate': [0.1, 0.01],
+                                    'n_estimators': [50, 100]},
+                    "CatBoostingRegressor":{'depth': [6, 8],
+                                           'learning_rate': [0.01, 0.1]},
+                    "AdaBoostRegressor":{'learning_rate': [0.1, 0.01],
+                                        'n_estimators': [50, 100]}
+                    }
+            
             
             logging.info("find accuracy scores of models")
-            model_report=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
+            model_report=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models,param=params)
          
 
             best_model_name=max(model_report,key=lambda k: model_report[k])
